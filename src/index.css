@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-brand-frost text-brand-midnight antialiased;
+    min-height: 100vh;
+    margin: 0;
+  }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    @apply bg-gradient-brand bg-clip-text text-transparent;
+  }
+
+  /* Global scrollbar cleanup - works in WebKit browsers */
+  *::-webkit-scrollbar-button {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #bfc6cd;
+    border-radius: 10px;
+    transition: background 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  /* Sidebar Specific Scroll Styling */
+  .sidebar-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2) !important;
+  }
+  .sidebar-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+  }
+
+  /* Table Specific Scroll Styling */
+  .table-scrollbar::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+  }
+  .table-scrollbar::-webkit-scrollbar-track {
+    background: #f8fafc; /* slate-50 */
+    border-radius: 10px;
+  }
+  .table-scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1; /* slate-300 */
+    border-radius: 10px;
+  }
+  .table-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8; /* slate-400 */
+  }
+  /* Bouncing Dots Loader */
+  .bouncing-dots {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3px;
+    height: 16px;
+  }
+  .bouncing-dots span {
+    width: 4px;
+    height: 4px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: bouncing-loader 0.6s infinite alternate;
+  }
+  .bouncing-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .bouncing-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  @keyframes bouncing-loader {
+    to {
+      opacity: 0.3;
+      transform: translateY(-6px);
+    }
+  }
+}
