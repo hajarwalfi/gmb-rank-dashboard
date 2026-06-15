@@ -38,8 +38,8 @@ export default function LoginPage({ onLoginSuccess }) {
     setLoading(true);
 
     // Hardcoded credentials as requested
-    const VALID_EMAIL = 'gahan.dev@gmail.com';
-    const VALID_PASS = 'g@h@N#3242$Syt';
+    const VALID_EMAIL = 'kurtismaximumride@gmail.com';
+    const VALID_PASS = 'Maximumride12!12345678';
 
     setTimeout(() => {
       if (email === VALID_EMAIL && password === VALID_PASS) {
